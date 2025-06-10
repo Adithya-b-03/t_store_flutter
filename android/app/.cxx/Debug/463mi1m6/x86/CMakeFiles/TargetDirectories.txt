@@ -1,0 +1,2 @@
+E:/Coding with T/Products/01- T store/project/Clone projects/01- TStore App Project Starter Kit/android/app/.cxx/Debug/463mi1m6/x86/CMakeFiles/edit_cache.dir
+E:/Coding with T/Products/01- T store/project/Clone projects/01- TStore App Project Starter Kit/android/app/.cxx/Debug/463mi1m6/x86/CMakeFiles/rebuild_cache.dir
