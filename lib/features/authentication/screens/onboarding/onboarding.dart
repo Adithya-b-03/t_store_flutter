@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/features/authentication/controllers.onboarding/onboarding_controller.dart';
 import 'package:t_store/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
 import 'package:t_store/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
 import 'package:t_store/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
@@ -17,10 +20,13 @@ class  OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(OnBoardingController());
     return Scaffold(
         body: Stack(
           children: [
             PageView(
+              controller: controller.pageController,
+              onPageChanged: controller.updatePageIndicator,
               children: const [
                 OnBoardingPage(
                   image: TImages.onBoardingImage1,
@@ -60,9 +66,14 @@ class OnBoardingNextButton extends StatelessWidget {
         right: TSizes.defaultSpace,
         bottom: TDeviceUtils.getBottomNavigationBarHeight(),
         child: ElevatedButton(
-            onPressed: (){},
+            onPressed: OnBoardingController.instance.nextPage,
             child: Icon(Iconsax.arrow_right_3,  color: dark ? Colors.black : Colors.white,),
-            style: ElevatedButton.styleFrom(shape: const CircleBorder(),backgroundColor: dark?TColors.light:TColors.black)
+            style: ElevatedButton.styleFrom(shape: const CircleBorder(),
+              backgroundColor: dark?TColors.primary :TColors.black,
+              side: BorderSide(
+              color: dark ? Colors.black : Colors.white, // 👈 Border color here
+              width: 2,             // Optional: border width
+            ),)
         ),
     );
   }
