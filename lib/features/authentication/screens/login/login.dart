@@ -8,8 +8,8 @@ import 'package:t_store/utils/constants/text_strings.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../../common/styles/spacing_styles.dart';
-import '../../../../common/widgets.login_signup/form_divider.dart';
-import '../../../../common/widgets.login_signup/social_button.dart';
+import '../../../../common/widgets/login_screen/form_divider.dart';
+import '../../../../common/widgets/login_screen/social_button.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 
