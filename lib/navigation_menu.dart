@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart';
 import 'package:iconsax/iconsax.dart';
+
+import 'features/shop/screens/home/home.dart';
 class TNavigationMenu extends StatelessWidget {
   const TNavigationMenu({super.key});
 
@@ -34,5 +36,5 @@ class TNavigationMenu extends StatelessWidget {
 }
 class NavigationController extends GetxController{
   final Rx<int> selectedIndex = 0.obs;
-  final screens = [Container(color: Colors.green),Container(color: Colors.red),Container(color: Colors.blue),Container(color: Colors.orange)];
+  final screens = [const THomeScreen(),Container(color: Colors.red),Container(color: Colors.blue),Container(color: Colors.orange)];
 }
