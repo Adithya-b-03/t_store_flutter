@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
@@ -13,6 +14,7 @@ import '../../../../common/widgets/custom_shapes/containers/circular_container.d
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/custom_shapes/curved_edges/curved_edge_widget.dart';
+import '../../../../common/widgets/image/t_rounded_image.dart';
 import '../../../../common/widgets/image_text_widgets/vertical_image_text.dart';
 import '../../../../common/widgets/products/cart/cart_menu_icon.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
@@ -25,23 +27,35 @@ class THomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
-            child: TPrimaryHeaderContainer(
-                child: Column(
-      children: [
-        //appbar
-        THomeAppBar(),
-        SizedBox(
-          height: TSizes.spaceBtwSections,
-        ),
-        //searchbar
-        TSearchContainer(text: 'Search in Store'),
-        SizedBox(
-          height: TSizes.spaceBtwSections,
-        ),
-        //categories
-        THomeCategories()
-      ],
-    ))));
+            child: Column(children: [
+      TPrimaryHeaderContainer(
+          child: Column(
+        children: [
+          //appbar
+          const THomeAppBar(),
+          const SizedBox(
+            height: TSizes.spaceBtwSections,
+          ),
+          //searchbar
+          const TSearchContainer(text: 'Search in Store'),
+          const SizedBox(
+            height: TSizes.spaceBtwSections,
+          ),
+          //categories
+          const THomeCategories(),
+        ],
+      )),
+      Padding(
+        padding: const EdgeInsets.all(TSizes.defaultSpace),
+        child: Column(children: [
+          CarouselSlider(items: [
+            TRoundedImage(imageUrl: TImages.promoBanner1),
+            TRoundedImage(imageUrl: TImages.promoBanner2),
+            TRoundedImage(imageUrl: TImages.promoBanner3)
+          ], options: CarouselOptions(viewportFraction: 1)),
+          const SizedBox(height: TSizes.spaceBtwItems,)
+        ]),
+      ),
+    ])));
   }
 }
-
