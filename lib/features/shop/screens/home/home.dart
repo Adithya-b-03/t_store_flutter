@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/custom_shapes/curved_edges/curved_edges.dart';
+import 'package:t_store/common/widgets/products/produts_cards/product_card_vertical.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:t_store/features/shop/screens/home/widgets/promo_slider.dart';
@@ -48,9 +49,19 @@ class THomeScreen extends StatelessWidget {
       )),
       Padding(
         padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: TPromoSlider(banners: [TImages.promoBanner1,TImages.promoBanner2,TImages.promoBanner3],),
+        child: Column(children: [
+          TPromoSlider(
+            banners: [
+              TImages.promoBanner1,
+              TImages.promoBanner2,
+              TImages.promoBanner3
+            ],
+          ),
+          TProductCardVertical(
+
+          )
+        ]),
       ),
     ])));
   }
 }
-
