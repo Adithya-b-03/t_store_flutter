@@ -21,9 +21,7 @@ class TProductCardVertical extends StatelessWidget {
       ),
       child: Column(
         children:[
-          TCircularContainer(
-            height: 180,
-          )
+
         ]
       ),
     );
