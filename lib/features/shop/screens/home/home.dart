@@ -18,6 +18,7 @@ import '../../../../common/widgets/custom_shapes/containers/search_container.dar
 import '../../../../common/widgets/custom_shapes/curved_edges/curved_edge_widget.dart';
 import '../../../../common/widgets/image/t_rounded_image.dart';
 import '../../../../common/widgets/image_text_widgets/vertical_image_text.dart';
+import '../../../../common/widgets/layouts/grid_layout.dart';
 import '../../../../common/widgets/products/cart/cart_menu_icon.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/colors.dart';
@@ -30,38 +31,41 @@ class THomeScreen extends StatelessWidget {
     return Scaffold(
         body: SingleChildScrollView(
             child: Column(children: [
-      TPrimaryHeaderContainer(
-          child: Column(
-        children: [
-          //appbar
-          const THomeAppBar(),
-          const SizedBox(
-            height: TSizes.spaceBtwSections,
-          ),
-          //searchbar
-          const TSearchContainer(text: 'Search in Store'),
-          const SizedBox(
-            height: TSizes.spaceBtwSections,
-          ),
-          //categories
-          const THomeCategories(),
-        ],
-      )),
-      Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: Column(children: [
-          TPromoSlider(
-            banners: [
-              TImages.promoBanner1,
-              TImages.promoBanner2,
-              TImages.promoBanner3
-            ],
-          ),
-          TProductCardVertical(
-
-          )
-        ]),
-      ),
-    ])));
+              const TPrimaryHeaderContainer(
+                  child: Column(
+                    children: [
+                      //appbar
+                      THomeAppBar(),
+                      SizedBox(
+                        height: TSizes.spaceBtwSections,
+                      ),
+                      //searchbar
+                      TSearchContainer(text: 'Search in Store'),
+                      SizedBox(
+                        height: TSizes.spaceBtwSections,
+                      ),
+                      //categories
+                      THomeCategories(),
+                    ],
+                  )),
+              Padding(
+                padding: const EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(children: [
+                  TPromoSlider(
+                    banners: const [
+                      TImages.promoBanner1,
+                      TImages.promoBanner2,
+                      TImages.promoBanner3
+                    ],
+                  ),
+                  const SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
+                  TGridLayout(itemCount: 4,itemBuilder: (_, index) => const TProductCardVertical()),
+                  const TProductCardVertical()
+                ]),
+              ),
+            ])));
   }
 }
+

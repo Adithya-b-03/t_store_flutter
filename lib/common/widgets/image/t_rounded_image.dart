@@ -34,8 +34,8 @@ class TRoundedImage extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        // width: width,
-        // height: height,
+        width: width,
+        height: height,
         padding: padding,
         decoration: BoxDecoration(
             border: border,
