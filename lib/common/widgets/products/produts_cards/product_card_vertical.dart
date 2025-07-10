@@ -100,6 +100,7 @@ class TProductCardVertical extends StatelessWidget {
                         color: TColors.primary, size: TSizes.iconXs)
                   ],
                 ),
+                // Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
